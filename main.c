@@ -12,7 +12,7 @@ int main(void) {
 
   Vector *vector = &svector;
   for (int i = 0; i < vector->capacity; i++) {
-    pushback(vector, i + (i % 3));
+    pushback(vector, i);
   }
   printf("%d\n", isVectorValid(vector));
   printf("%d\n", isVectorValid((Vector *){NULL, 1, 1}));
@@ -25,15 +25,17 @@ int main(void) {
     i++;
   }
   putchar('\n');
-  removeAt(vector, 11);
   i = 0;
+  removeAt(NULL, 1);
+  removeAt(vector, 12);
+  printf("size=%zu\n", vector->size);
+
+  removeAt(vector, 4);
+  printf("size=%zu\n", vector->size);
 
   VECTOR_FOREACH(vector, it) {
-    printf("%d\n", at(vector, i));
+    printf("[%i]=%d\n", i, *it);
     i++;
-  }
-  for (int i = 0; i < vector->size; ++i) {
-    at(vector, i);
   }
   resize(vector);
   Vector a = (Vector){.elements = NULL};

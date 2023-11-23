@@ -3,3 +3,4 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -g3 -Wpedantic -fsanitize=addr
 project(Vector)
 
 add_executable(app main.c vector.c)
+add_executable(test vectest.c vector.c)

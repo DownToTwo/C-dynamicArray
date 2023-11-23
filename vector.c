@@ -102,13 +102,18 @@ element popback(Vector *vector) {
 
   return vector->elements[--vector->size];
 }
+
+/*! TODO: make check or remake remove
+ *
+ */
 void removeAt(Vector *vector, size_t index) {
   if (!isVectorValid(vector)) {
     printf("Vector NULL\n");
     exit(EXIT_FAILURE);
   }
-
-  memmove(&vector->elements[index], &vector->elements[index + 1],
-          (vector->size - index - 1) * sizeof(element)); // WTF?!
-  vector->size--;
+  if (index < vector->size) {
+    memmove(&vector->elements[index], &vector->elements[index + 1],
+            sizeof(element) * (vector->size - 1 - index)); // WTF?!
+    vector->size--;
+  }
 }

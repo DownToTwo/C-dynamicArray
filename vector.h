@@ -1,4 +1,4 @@
-/* This file was automatically generated.  Do not edit! */
+/* This file was automatically generated.  Do not edit! By autoheaders */
 #ifndef _VECTOR_
 #define _VECTOR_
 #include <stdbool.h>
