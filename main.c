@@ -26,7 +26,6 @@ int main(void) {
   }
   putchar('\n');
   i = 0;
-  removeAt(NULL, 1);
   removeAt(vector, 12);
   printf("size=%zu\n", vector->size);
 
